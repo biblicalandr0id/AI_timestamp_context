@@ -68,3 +68,13 @@ class EnhancedConversationSystem:
                 self.states[-2].timestamp,
                 state.timestamp
             )
+
+    def _generate_response(self, state: ConversationState) -> dict:
+        """Generate response with state information"""
+        return {
+            'timestamp': state.timestamp.isoformat(),
+            'context_depth': state.context_depth,
+            'patterns': state.patterns or [],
+            'sentiment': state.sentiment,
+            'message': f"Processed message at depth {state.context_depth}"
+        }

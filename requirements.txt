@@ -1,0 +1,18 @@
+# Core Dependencies
+numpy>=1.21.0
+networkx>=2.6.0
+matplotlib>=3.4.0
+
+# NLP and ML
+transformers>=4.30.0
+torch>=2.0.0
+
+# Data Processing
+pandas>=1.3.0
+
+# Utilities
+python-dateutil>=2.8.0
+
+# Optional: For enhanced features
+# scikit-learn>=1.0.0
+# scipy>=1.7.0

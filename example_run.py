@@ -1,3 +1,8 @@
+from datetime import datetime, timedelta
+import numpy as np
+from ai_consciousness_model import ConsciousnessEngine
+from visualization_enhanced import ConsciousnessVisualizer
+
 def main():
     engine = ConsciousnessEngine()
     visualizer = ConsciousnessVisualizer(engine)

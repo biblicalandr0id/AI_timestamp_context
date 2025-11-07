@@ -9,6 +9,7 @@ import logging
 from datetime import datetime
 from torch.cuda.amp import autocast
 import math
+from abc import ABC, abstractmethod
 
 logger = logging.getLogger(__name__)
 
@@ -283,3 +284,26 @@ class PowerfulAI(nn.Module):
                 # Adapt plugins
                 for plugin in self.processing_plugins.values():
                     plugin.adapt(feedback)
+
+    def _compute_feedback(
+        self,
+        output: Dict[str, torch.Tensor],
+        target: torch.Tensor
+    ) -> Dict[str, Any]:
+        """Compute feedback for meta-learning"""
+        hidden_states = output['hidden_states']
+
+        # Compute loss
+        loss = F.mse_loss(hidden_states, target)
+
+        # Compute additional metrics
+        feedback = {
+            'loss': loss.item(),
+            'hidden_norm': torch.norm(hidden_states).item(),
+            'target_similarity': F.cosine_similarity(
+                hidden_states.mean(dim=1),
+                target.mean(dim=1)
+            ).mean().item()
+        }
+
+        return feedback

@@ -9,15 +9,44 @@ A comprehensive, enterprise-grade system for consciousness modeling with timesta
 ### 🆕 NEW: State-of-the-Art Neural Chatbot
 Now includes a production-ready transformer-based chatbot with continual learning, RAG, and real-time web interface! [See CHATBOT.md for details]
 
-**Quick Start Chatbot:**
-```bash
-python launch_chatbot.py server  # Launch web interface
-python launch_chatbot.py cli     # Launch command-line
+### ⚡ Super Easy Installation
+
+**Windows:**
+```cmd
+install.bat
 ```
+
+**Linux/Mac:**
+```bash
+./install.sh
+```
+
+**Docker:**
+```bash
+docker-compose up
+```
+
+**Android (Termux):**
+See [MOBILE.md](MOBILE.md)
+
+### 🚀 Launch in 30 Seconds
+
+```bash
+python launch_chatbot.py server  # Web interface
+python launch_chatbot.py cli     # Command-line
+```
+
+Then open: **http://localhost:5000** 🎉
 
 ---
 
-[See FEATURES.md for v2.0 features | See CHATBOT.md for v3.0 chatbot features]
+**📖 Documentation:**
+- [QUICKSTART.md](QUICKSTART.md) - Get running in 3 minutes
+- [CHATBOT.md](CHATBOT.md) - Complete chatbot guide
+- [MOBILE.md](MOBILE.md) - Android & mobile setup
+- [FEATURES.md](FEATURES.md) - All v2.0 features
+
+---
 
 ## Overview
 

@@ -35,6 +35,27 @@ psutil>=5.9.0
 # Task Scheduling (for Training Orchestrator)
 schedule>=1.2.0
 
+# Desktop Application
+PyQt6>=6.4.0  # Native desktop GUI
+pyinstaller>=5.13.0  # Executable packaging
+
+# Voice Interface
+SpeechRecognition>=3.10.0  # Speech-to-text
+pyttsx3>=2.90  # Text-to-speech (offline)
+gTTS>=2.3.0  # Google text-to-speech (online)
+pygame>=2.5.0  # Audio playback
+pyaudio>=0.2.13  # Audio input (optional, for better mic support)
+
+# Vision/Image Understanding
+Pillow>=10.0.0  # Image processing
+opencv-python>=4.8.0  # Computer vision
+# CLIP and BLIP are from transformers package above
+
+# Visualization
+plotly>=5.17.0  # Interactive charts and graphs
+pyvis>=0.3.2  # Network/graph visualization
+kaleido>=0.2.1  # Static image export for plotly
+
 # Optional: Database Support
 # sqlalchemy>=2.0.0
 # psycopg2-binary>=2.9.0  # For PostgreSQL
@@ -42,7 +63,7 @@ schedule>=1.2.0
 # supabase>=2.0.0  # For Supabase integration
 
 # Optional: Advanced Features
-# scikit-learn>=1.0.0
-# scipy>=1.7.0
+scikit-learn>=1.0.0  # For ML utilities and clustering
+scipy>=1.7.0  # Scientific computing
 # redis>=5.0.0  # For caching
 # faiss-cpu>=1.7.0  # For faster vector search

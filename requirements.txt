@@ -3,10 +3,11 @@ numpy>=1.21.0
 networkx>=2.6.0
 matplotlib>=3.4.0
 
-# NLP and ML
+# Deep Learning & NLP (SOTA Chatbot)
 transformers>=4.30.0
 torch>=2.0.0
 sentence-transformers>=2.2.0
+accelerate>=0.20.0  # For model optimization
 
 # Data Processing
 pandas>=1.3.0
@@ -14,9 +15,12 @@ pandas>=1.3.0
 # Utilities
 python-dateutil>=2.8.0
 
-# Web Framework (for API)
+# Web Framework (for API & Chatbot Server)
 flask>=2.3.0
 flask-cors>=4.0.0
+flask-socketio>=5.3.0  # For real-time chat
+python-socketio>=5.9.0
+eventlet>=0.33.0  # For WebSocket support
 
 # Configuration
 pyyaml>=6.0.0
@@ -28,12 +32,17 @@ pytest-cov>=4.1.0
 # Performance Monitoring
 psutil>=5.9.0
 
+# Task Scheduling (for Training Orchestrator)
+schedule>=1.2.0
+
 # Optional: Database Support
 # sqlalchemy>=2.0.0
 # psycopg2-binary>=2.9.0  # For PostgreSQL
 # pymongo>=4.5.0  # For MongoDB
+# supabase>=2.0.0  # For Supabase integration
 
 # Optional: Advanced Features
 # scikit-learn>=1.0.0
 # scipy>=1.7.0
 # redis>=5.0.0  # For caching
+# faiss-cpu>=1.7.0  # For faster vector search

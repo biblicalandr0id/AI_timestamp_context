@@ -1,3 +1,7 @@
+from datetime import datetime, timedelta
+from conversation_system import EnhancedConversationSystem
+from visualization import ConversationVisualizer
+
 def main():
     system = EnhancedConversationSystem()
     visualizer = ConversationVisualizer(system)

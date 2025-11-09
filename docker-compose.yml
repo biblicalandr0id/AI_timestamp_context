@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build: .
+    container_name: ai-chatbot
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./checkpoints:/app/checkpoints
+      - ./exports:/app/exports
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - chatbot-network
+
+networks:
+  chatbot-network:
+    driver: bridge
+
+volumes:
+  data:
+  checkpoints:
+  exports:

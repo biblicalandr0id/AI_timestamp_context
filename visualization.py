@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 from datetime import datetime, timedelta
+from conversation_system import EnhancedConversationSystem
 
 class ConversationVisualizer:
     def __init__(self, conversation_system: EnhancedConversationSystem):

@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+from ai_consciousness_model import ConsciousnessEngine
+
 class ConsciousnessVisualizer:
     def __init__(self, engine: ConsciousnessEngine):
         self.engine = engine

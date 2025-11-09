@@ -62,12 +62,32 @@ def launch_installer():
     print("\n🚀 Launching installation wizard...")
     print()
 
+    # Ask about connection speed
+    print("Do you have a slow internet connection?")
+    print("  [1] Fast connection (use default installer with 10min timeouts)")
+    print("  [2] Slow connection (use NO TIMEOUT installer - recommended!)")
+    print()
+
+    choice = input("Enter 1 or 2 (default: 2 for slow): ").strip()
+
+    installer_choice = 'installer_no_timeout.py'  # Default to no timeout
+
+    if choice == '1':
+        installer_choice = 'enhanced_installer.py'
+        print("\n✓ Using fast connection installer (10min timeouts)")
+    else:
+        print("\n✓ Using NO TIMEOUT installer (recommended for most users)")
+        print("  This installer will NEVER timeout - perfect for slow connections!")
+
+    print()
+
     try:
-        # Try enhanced installer first
-        if os.path.exists('enhanced_installer.py'):
-            subprocess.run([sys.executable, 'enhanced_installer.py'])
-        else:
+        if os.path.exists(installer_choice):
+            subprocess.run([sys.executable, installer_choice])
+        elif os.path.exists('installer_wizard.py'):
             subprocess.run([sys.executable, 'installer_wizard.py'])
+        else:
+            subprocess.run([sys.executable, 'enhanced_installer.py'])
     except KeyboardInterrupt:
         print("\n\n⚠️  Installation cancelled by user")
         sys.exit(0)
